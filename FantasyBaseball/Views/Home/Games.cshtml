@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Games";
+}
+
+<h2>Live Games</h2>
+
+<input type="button" id="open" value="Run Games" />
+<input type="button" id="close" value="Pause Games" disabled="disabled" />
+<input type="button" id="reset" value="Reset" />
+
+
+<div id="games">
+
+</div>
+
+
+
+@section Scripts
+{
+    <script src="/signalr/hubs"></script>
+    <script src="@Url.Content("~/Scripts/SignalR.GameWatcher.js")"></script>
+    
+}
