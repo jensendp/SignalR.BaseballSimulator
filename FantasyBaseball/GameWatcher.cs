@@ -34,6 +34,7 @@ namespace FantasyBaseball
         {
             Clients = clients;
             LoadDefaultGames();
+            GamesState = FantasyBaseball.GamesState.Paused;
             StartWatcher();
         }
 

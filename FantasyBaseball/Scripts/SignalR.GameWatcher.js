@@ -62,6 +62,9 @@ $(function () {
 			$("#open").prop("disabled", false);
 			$("#close").prop("disabled", true);
 			$("#reset").prop("disabled", false);
+		},
+		gamesReset: function () {
+		    init();
 		}
 	});
 
@@ -78,6 +81,8 @@ $(function () {
         		gamesWatcher.client.gamesPaused();
         	}
 
+        	gamesWatcher.server.runGames();
+
         	// Wire up the buttons
         	$("#open").click(function () {
         		gamesWatcher.server.runGames();
@@ -88,7 +93,7 @@ $(function () {
         	});
 
         	$("#reset").click(function () {
-        		ticker.server.reset();
+        	    gamesWatcher.server.reset();
         	});
         });
 });

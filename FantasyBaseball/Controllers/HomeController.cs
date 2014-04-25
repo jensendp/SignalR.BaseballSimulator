@@ -13,6 +13,7 @@ namespace FantasyBaseball.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Games()
         {
             return View();
