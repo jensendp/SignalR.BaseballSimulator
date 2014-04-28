@@ -175,9 +175,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404251847201_InitialCreate.cs" />
+    <Compile Include="Migrations\201404251847201_InitialCreate.Designer.cs">
+      <DependentUpon>201404251847201_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404281601308_Stuff.cs" />
+    <Compile Include="Migrations\201404281601308_Stuff.Designer.cs">
+      <DependentUpon>201404281601308_Stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AtBat.cs" />
     <Compile Include="Models\Batter.cs" />
+    <Compile Include="Models\FavoriteTeam.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inning.cs" />
@@ -245,6 +255,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404251847201_InitialCreate.resx">
+      <DependentUpon>201404251847201_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404281601308_Stuff.resx">
+      <DependentUpon>201404281601308_Stuff.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

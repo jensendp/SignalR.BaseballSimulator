@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using FantasyBaseball.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FantasyBaseball.Controllers
 {
@@ -16,7 +19,10 @@ namespace FantasyBaseball.Controllers
         [Authorize]
         public ActionResult Games()
         {
-            return View();
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+
+            return View(currentUser.FavoriteTeams);
         }
     }
 }

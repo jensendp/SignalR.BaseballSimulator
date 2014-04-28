@@ -174,7 +174,13 @@ namespace FantasyBaseball
 
         private void BroadcastGame(Game game)
         {
-            Clients.All.updateGame(game);
+            var teams = game.Identifier.Split(new string[]{"vs"}, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var team in teams)
+            {
+                Clients.Group(team).updateGame(game);
+            }
+            //Clients.All.updateGame(game);
         }
 
         private void BroadcastGamesReset()

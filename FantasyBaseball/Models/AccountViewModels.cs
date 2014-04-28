@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace FantasyBaseball.Models
 {
@@ -26,6 +28,8 @@ namespace FantasyBaseball.Models
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public IEnumerable<FavoriteTeam> FavoriteTeams { get; set; }
     }
 
     public class LoginViewModel
